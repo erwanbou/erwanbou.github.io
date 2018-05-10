@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tutorial</title>
+
+    <!-- Bootstrap Core CSS -->
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117189899-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-117189899-1');
+    </script>
+
+
+    <!-- Integrate France chart -->
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/queue.v1.min.js"></script>
+    <script type="text/javascript" src="indexbis.js"></script>
+    <script type="text/javascript" src="indexqua.js"></script>
+
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+
+<body id="page-top">
+
+
+<a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+</a>
+
+<nav id="sidebar-wrapper">
+    ,    <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">La France à Grande Vitesse</a>
+    </li>
+    <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#about">La France par le train</a>
+    </li>
+    <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#Histoire des lignes">Etat du réseau</a>
+    </li>
+    <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#Rapprochement de Paris">Rapprochement de Paris</a>
+    </li>
+    <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#Province Province">Accélération des lignes</a>
+    </li>
+    <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#Dynamique des territoires">Dynamique des territoires</a>
+    </li>
+    <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#survey">Donnez nous votre avis ! </a>
+    </li>
+</ul>
+</nav>
+
+
+
+<!-- Header -->
+
+<header class="masthead d-flex">
+    <div class="container text-center my-auto">
+        <h1>La France à Grande Vitesse</h1>
+        <h3 class="mb-5">
+            <em>L'intégration des territoires français par le transport ferroviaire.</em>
+        </h3>
+    </div>
+</header>
+
+
+
+<!-- About -->
+
+<section class="content-section bg-light" id="about">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <h2>La France par le train.</h2>
+                <p class="lead mb-5">Depuis l'ouverture de la politique OpenData, la SNCF publie en accès libre des tableaux de données
+                    relatifs à son fonctionnement. Les sujets sont multiples, des horaires des lignes TER au nombre d'accidents sur des
+                    passages à niveau... On peut même y trouver la carte du wagon bar par trajet ! Ce site propose de vous aider à y voir plus clair sur les évolutions des temps de parcours entre Paris et la province, depuis 60 ans.
+                </p>
+
+
+
+                <p class="lead mb-5"> Nous souhaitons à la fois rendre justice aux importants travaux réalisés sur les grandes lignes ferroviaires, et à la fois pointer du doigt un traitement inégalitaire des différentes régions françaises. La question est donc :
+
+                    <strong> Comment a évolué l'accessibilité des territoires par le train en France ? </strong></p>
+
+                <p class="lead mb-5">Ce site est le support de notre projet du cours de Visualisation de données à l'ENSAE, à partir des données de la
+                    <a href="https://data.sncf.com/">SNCF.</a></p>
+                <a class="btn btn-dark btn-xl js-scroll-trigger" href="#Histoire des lignes">La petite histoire du réseau ferroviaire français.</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="content-section" id="Histoire des lignes">
+    <div class="container">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Le monstre SNCF</h3>
+            <h2>Un réseau tentaculaire et une fréquentation massive.</h2>
+        </div>
+
+        <div class="row">
+            <p class="text">Explication </p>
+        </div>
+
+    </div>
+
+
+</section>
+
+<!--
+
+
+<section class="content-section" id="Rapprochement de Paris">
+    <div class="container">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Rapprochement de Paris</h3>
+            <h2 class="mb-3">Comment les territoires se rapprochent-ils de Paris ?</h2>
+        </div>
+
+        <div class="row">
+            <p class="text">Depuis 60 ans, les temps de trajet entre les grandes villes de province et Paris évoluent, grâce à deux progrès :
+            <ul> 	<li>les innovations sur le réseau ou les trains font baisser, peu à peu, les temps des trajets.</li>
+                <li>les gros projets d’infrastructure (par exemple, les ouvertures de lignes TGV) les font diminuer brutalement. </li>
+            </ul>
+            Ces progrès se font différemment selon les villes. La visualisation qui suit permet de répondre à la question suivante : quels sont les territoires qui se rapprochent le plus de Paris pour la SNCF ? Pour cela, la lecture de la carte est très simple. Prenons l’exemple de Lyon : le point pour Lyon se rapproche de Paris, selon les évolutions de temps de trajet. Si on met aujourd’hui 2 fois moins de temps qu’en 1958 à faire le trajet Paris-Lyon, le point pour Lyon sera à mi-chemin entre Lyon et Paris. Donc plus le trait derrière la ville qui vous intéresse grandit, plus cette ville s’est rapprochée de Paris.
+            </p>
+        </div>
+
+        <div class="row">
+            <p class="text">
+                Tous les territoires français n’ont donc pas tous eu la même chance ! Regardez par exemple Toulouse, entre 1967 et 2007 : aucune amélioration, et même un allongement de la durée par moments ! Alors qu’on mettait plus de 5h pour aller à Strasbourg en 1958 et moins de 2h aujourd’hui. Néanmoins, toutes les villes se sont massivement rapprochées de Paris. Merci la SNCF !
+            </p>
+        </div>
+
+     <div class="row">
+            <p class="text">
+                Quand vous voyez un gros point rouge s'afficher sur la carte, c'est qu'une ligne TGV a été créée ou améliorée. Les dates principales vous sont rappelées juste en-dessous.
+            </p>
+        </div>
+
+        <div class="d-print-block" align="center">
+            <div class="Aligner-item">
+                <script type="text/javascript" src="indexbis.js"></script>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>jQuery UI Slider - Range with fixed minimum</title>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                <link rel="stylesheet" href="/resources/demos/style.css">
+                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                <script>
+                    $( function() {
+                        $( "#slider-range-min" ).slider({
+                            range: "min",
+                            value: 1958,
+                            min: 1958,
+                            max: 2017,
+                            slide: function( event, ui ) {
+                                $( "#amount" ).val( ui.value );
+                                console.log(event, ui);
+                                handleYearChange();
+                            }
+                        });
+                        $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
+                    } );
+                </script>
+
+                <div id="slider-range-min"></div>
+                <p>
+                    <label for="amounto">Année :</label>
+                    <input type="text"
+                           id="amount"
+                           readonly
+                           style="border:0; color:#f6931f; font-weight:bold;"
+                    >
+                </p>
+
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="blockquote">
+    <div class="container">
+        <div class="content-section-heading">
+            <h3>Les plus grandes accelérations : les dates marquantes du TGV</h3>
+        </div>
+        <script id="infogram_0_d9da2f2a-aaf8-4e3a-a6a0-a03263451c28" title="date" src="https://e.infogram.com/js/dist/embed.js?CeW" type="text/javascript"></script>
+        <div class="content-section-heading">
+            <h3>La France fait elle vraiment dans le 'tout TGV' ? </h3>
+        </div>
+        <div class="infogram-embed" data-id="22b3570a-983c-455b-ae81-35e1632621ba" data-type="interactive" align="center"></div><script>!function(e,t,n,s){var i="InfogramEmbeds",o=e.getElementsByTagName(t)[0],d=/^http:/.test(e.location)?"http:":"https:";if(/^\/{2}/.test(s)&&(s=d+s),window[i]&&window[i].initialized)window[i].process&&window[i].process();else if(!e.getElementById(n)){var a=e.createElement(t);a.async=1,a.id=n,a.src=s,o.parentNode.insertBefore(a,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script>
+
+    </div>
+
+</section>
+
+
+<section class="content-section" id="Zones">
+    <div class="container">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Rapprochement de Paris : zonage</h3>
+            <h2 class="mb-5">Je suis à Paris, où puis-je aller en 2h ? </h2>
+
+            <div class="row">
+                <p class="text">
+                    Vendredi soir, 18h. Je veux partir de Paris mais je ne veux pas passer plus de 2h dans le train. Où puis-je aller ? Et si ma grand-mère s’était posé la même question il y a 50 ans, quelle aurait été la réponse ? La réponse est dans la visualisation suivante !
+                    Faites défiler le curseur : la première zone vous donne où vous pouvez aller en 2h, la deuxième où vous pouvez aller en 4h. De beaux progrès non ?
+                    On voit encore cependant des inégalités de territoire : s’il n’y en avait pas, ces zones seraient des cercles parfaits … Ce n’est pas exactement le cas !
+                </p>
+            </div>
+
+            <div class="d-print-block" align="center">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>jQuery UI Slider - Range with fixed minimum</title>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                <link rel="stylesheet" href="/resources/demos/style.css">
+                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                <script type="text/javascript" src="indexqua.js"></script>
+
+                <script>
+                    $( function() {
+                        $( "#slider-range-min2" ).slider({
+                            range: "min",
+                            value: 1958,
+                            min: 1958,
+                            max: 2017,
+                            slide: function( event2, ui2 ) {
+                                $( "#amount2" ).val( ui2.value );
+                                handleYearChange2();
+                            }
+                        });
+                        $( "#amount2" ).val( $( "#slider-range-min2" ).slider( "value" ) );
+                    } );
+                </script>
+
+
+                <div id="slider-range-min2"></div>
+
+                <p>
+                    <label for="amounto">Année :</label>
+                    <input type="text"
+                           id="amount2"
+                           readonly
+                           style="border:0; color:#f6931f; font-weight:bold;"
+                    >
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="infogram-embed" data-id="25438e97-776d-4df8-8a29-363703cb8056" data-type="interactive" data-title="Grenelle"></div><script>!function(e,t,n,s){var i="InfogramEmbeds",o=e.getElementsByTagName(t)[0],d=/^http:/.test(e.location)?"http:":"https:";if(/^\/{2}/.test(s)&&(s=d+s),window[i]&&window[i].initialized)window[i].process&&window[i].process();else if(!e.getElementById(n)){var a=e.createElement(t);a.async=1,a.id=n,a.src=s,o.parentNode.insertBefore(a,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"></div>
+
+
+<section class="content-section" id="Province Province">
+
+
+    <div class="container">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Accélération des lignes</h3>
+            <h2>Relier Paris aux régions rapidement c'est bien mais y a pas que la capitale qui compte !</h2>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col-lg-6">
+                <img src="Vitesse moyenne/Vitesse moyenne en 1987 .png" height="500" width="500" >
+            </div>
+            <div class="col-lg-6">
+                <img src="Vitesse moyenne/Vitesse moyenne en 2017 .png" height="500" width="500" >
+            </div>
+        </div>
+        <div class="row">
+            <p class="text">
+                30 ans séparent ces deux graphiques ! Ils permettent de se rendre compte de la vitesse moyenne des Lignes à Grande Vitesse (LGV). Aujourd'hui, par exemple, c'est sur la ligne Paris-Bordeaux qu'on va le plus vite, avec une moyenne de près de 250 km/h ! En vert, vous voyez les lignes entre villes de province et en bleu, les lignes Paris-province.
+                Première observation : on va partout plus vite ! Deuxième observation, les lignes entre villes de province sont en général plus lentes : la SNCF penserait-elle un peu trop à Paris ?
+            </p>
+        </div>
+
+</section>
+
+<div class="infogram-embed" data-id="2a9073fa-348c-4a61-b623-abbc4a0e254e" data-type="interactive" data-title="macron"></div><script>!function(e,t,n,s){var i="InfogramEmbeds",o=e.getElementsByTagName(t)[0],d=/^http:/.test(e.location)?"http:":"https:";if(/^\/{2}/.test(s)&&(s=d+s),window[i]&&window[i].initialized)window[i].process&&window[i].process();else if(!e.getElementById(n)){var a=e.createElement(t);a.async=1,a.id=n,a.src=s,o.parentNode.insertBefore(a,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"></div>
+
+
+<section class="content-section" id="Dynamique des territoires">
+    <div class="container">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Evolution de la dessert des territoires.</h3>
+            <h2>Des territoires aux évolutions bien différentes, pour quelle accessibilité en train ?</h2>
+        </div>
+        <div class="row">
+            <p class="text">
+                Pourquoi la SNCF investit de l'argent plutôt dans telle ligne que dans telle autre ? On pourrait penser par exemple que les régions qui gagnent le plus de population ou qui se développent économiquement sont plus développées par la SNCF. Verdict avec les cartes ci-dessous ...
+            </p>
+            <p class="text">A gauche, vous voyez les régions qui se rapprochent le plus de Paris depuis 30 ans. Plus le bleu est foncé, plus elles ont gagné. A droite, vous voyez celles qui ont gagné le plus de population et qui se sont le plus développées. Alors, y a-t-il un lien entre les deux ?
+                Pas si facile à dire ... Par exemple, le Sud-Est a connu une forte dynamique de population et s'est développé économiquement : ses habitants ont aussi gagné presque 2h de temps de trajet depuis Paris ! De l'autre côté, la Bretagne, en plein boom économique et démographique, semblent avoir été oubliés par les travaux de la SNCF.
+            </p>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col-lg-6">
+                <iframe id="datawrapper-chart-dey7k" src="//datawrapper.dwcdn.net/dey7k/9/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["dey7k"]={},window.datawrapper["dey7k"].embedDeltas={"100":575,"200":450,"300":425,"400":400,"500":400,"700":375,"800":375,"900":375,"1000":375},window.datawrapper["dey7k"].iframe=document.getElementById("datawrapper-chart-dey7k"),window.datawrapper["dey7k"].iframe.style.height=window.datawrapper["dey7k"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["dey7k"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("dey7k"==b)window.datawrapper["dey7k"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+            </div>
+            <div class="col-lg-6">
+                <iframe id="datawrapper-chart-3NAe8" src="//datawrapper.dwcdn.net/3NAe8/2/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["3NAe8"]={},window.datawrapper["3NAe8"].embedDeltas={"100":530,"200":452,"300":426,"400":426,"500":400,"700":400,"800":400,"900":400,"1000":400},window.datawrapper["3NAe8"].iframe=document.getElementById("datawrapper-chart-3NAe8"),window.datawrapper["3NAe8"].iframe.style.height=window.datawrapper["3NAe8"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["3NAe8"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("3NAe8"==b)window.datawrapper["3NAe8"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+            </div>
+
+            <div class="col-lg-6">
+                <iframe id="datawrapper-chart-dey7k" src="//datawrapper.dwcdn.net/dey7k/9/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["dey7k"]={},window.datawrapper["dey7k"].embedDeltas={"100":575,"200":450,"300":425,"400":400,"500":400,"700":375,"800":375,"900":375,"1000":375},window.datawrapper["dey7k"].iframe=document.getElementById("datawrapper-chart-dey7k"),window.datawrapper["dey7k"].iframe.style.height=window.datawrapper["dey7k"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["dey7k"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("dey7k"==b)window.datawrapper["dey7k"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+            </div>
+            <div class="col-lg-6">
+                <iframe id="datawrapper-chart-DD6Sy" src="//datawrapper.dwcdn.net/DD6Sy/2/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["DD6Sy"]={},window.datawrapper["DD6Sy"].embedDeltas={"100":530,"200":452,"300":426,"400":426,"500":400,"700":400,"800":400,"900":400,"1000":400},window.datawrapper["DD6Sy"].iframe=document.getElementById("datawrapper-chart-DD6Sy"),window.datawrapper["DD6Sy"].iframe.style.height=window.datawrapper["DD6Sy"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["DD6Sy"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("DD6Sy"==b)window.datawrapper["DD6Sy"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+            </div>
+
+
+            <div class="row">
+                <p class="text">
+                    Autre fait étonnant : 5 régions sur 11 ont vu leur temps de trajet augmenter de quelques minutes en 24 ans (entre 1990 et 2014) !
+                </p>
+                <p class="text">
+                    Heureusement, ce ralentissement n'était que passager : en 2017 tous ces trajets sont de nouveau moins longs qu'en 1990.
+
+                </p>
+            </div>
+        </div>
+
+</section>
+
+
+
+
+
+
+
+
+<section class="callout">
+
+    <div class="container text-center">
+
+        <h2 class="mx-auto mb-5">Alors, qu'en pensez-vous : la SNCF, moteur de rapprochement des territoires ?</h2>
+
+                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/"></a>
+
+    </div>
+
+</section>
+
+
+
+<section class="content-section bg-light" id="survey">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-10 mx-auto" align="center">
+                <h2>Ne partez pas sans nous donner votre avis !</h2>
+                <script>(function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd_2FqFBEsUgQ_2FpvkB9_2B9qEbYgdSnIZ0WfZLdhYsmDVHl0S.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script><a style="font: 12px Helvetica, sans-serif; color: #999; text-decoration: none;" href="https://fr.surveymonkey.com"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+-->
+
+<!-- Portfolio -->
+
+<!--
+
+<section class="content-section" id="portfolio">
+
+  <div class="container">
+
+    <div class="content-section-heading text-center">
+
+      <h3 class="text-secondary mb-0">Projet</h3>
+
+      <h2 class="mb-5">Grandes lignes du projet</h2>
+
+    </div>
+
+    <div class="row no-gutters">
+
+      <div class="col-lg-6">
+
+        <a class="portfolio-item" href="#">
+
+          <span class="caption">
+
+            <span class="caption-content">
+
+              <h2>Carte évolutive</h2>
+
+              <p class="mb-0">Une visualisation de l'ouverture et de la fermeture des lignes SNCF dans le temps.</p>
+
+            </span>
+
+          </span>
+
+          <img class="img-fluid" src="img/old_train.jpg" alt="">
+
+        </a>
+
+      </div>
+
+      <div class="col-lg-6">
+
+        <a class="portfolio-item" href="#">
+
+          <span class="caption">
+
+            <span class="caption-content">
+
+              <h2>Anamorphose</h2>
+
+              <p class="mb-0">Une carte qui se déforme selon les années et les réductions des temps de parcours.</p>
+
+            </span>
+
+          </span>
+
+          <img class="img-fluid" src="img/paris.jpg" alt="">
+
+        </a>
+
+      </div>
+
+      <div class="col-lg-6">
+
+        <a class="portfolio-item" href="#">
+
+          <span class="caption">
+
+            <span class="caption-content">
+
+              <h2>Lien avec la densité de population</h2>
+
+              <p class="mb-0">L'évolution de la population/l'activité économique des régions concernées par cette évolution du réseau ferroviaire.</p>
+
+            </span>
+
+          </span>
+
+          <img class="img-fluid" src="img/activite.jpg" alt="">
+
+        </a>
+
+      </div>
+
+      <div class="col-lg-6">
+
+        <a class="portfolio-item" href="#">
+
+          <span class="caption">
+
+            <span class="caption-content">
+
+              <h2>Les sujets qui fachent</h2>
+
+              <p class="mb-0">Fréquentation des 'petites lignes' en lien avec l'activité des territoires qu'elles desservent.</p>
+
+            </span>
+
+          </span>
+
+          <img class="img-fluid" src="img/train_train.jpg" alt="">
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+-->
+
+
+
+<!-- Call to Action -->
+
+<!--
+
+<section class="content-section bg-primary text-white">
+
+  <div class="container text-center">
+
+    <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+
+    <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
+
+    <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+
+  </div>
+
+</section>
+
+-->
+
+
+
+
+
+<!-- Footer -->
+
+<footer class="footer text-center">
+
+    <div class="container">
+
+        <ul class="list-inline mb-5">
+
+            <li class="list-inline-item">
+
+                <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/ENSAEParisTech/">
+
+                    <i class="icon-social-facebook"></i>
+
+                </a>
+
+            </li>
+
+            <li class="list-inline-item">
+
+                <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/ENSAEParisTech">
+
+                    <i class="icon-social-twitter"></i>
+
+                </a>
+
+            </li>
+
+            <li class="list-inline-item">
+
+                <a class="social-link rounded-circle text-white" href="https://github.com/letrainenfrance">
+
+                    <i class="icon-social-github"></i>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <p class="text-muted small mb-0"> &copy; Quiterie DUCO, Albane MIRON DE L'ESPINAY, Sylvain MOULIERAC, Alexandre SIMCIC, 2018</p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Scroll to Top Button-->
+
+<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+
+    <i class="fa fa-angle-up"></i>
+
+</a>
+
+
+
+<!-- Bootstrap core JavaScript -->
+<!-- En conflit avec la visu d3
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Plugin JavaScript -->
+
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+
+<!-- Custom scripts for this template -->
+
+<script src="js/stylish-portfolio.min.js"></script>
+
+
+
+</body>
+
+
+
+</html>
