@@ -1,6 +1,6 @@
 // PREMIERE ETAPE : Definition des variables globales utilisées par d3 pour le rendu
 // et par d'autres functions dans le code
-
+// OK
 // A ENLEVER A TERME
 var paris = [2.35, 48.85];
 var lyon = [4.85, 45.75];
@@ -88,17 +88,17 @@ function drawCities(cities) {
             })
     		.attr("r", "3px")
     		.attr("fill", "red");
-    
+
     return cities;
  }
 
 function drawLines(cities) {
     var lines = svg.selectAll("line").data(cities)
-    
+
     lines
         .exit()
             .remove();
-    
+
     lines
         .enter()
             .append("line")
